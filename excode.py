@@ -2,6 +2,11 @@ import numpy as np
 
 class ExtremismDetector:
 
+    try:
+        import numpy as np
+    except:
+        print("Numpy not installed, try 'pip install numpy'")
+
     def __init__(self, ingroup_dict, violence_dict, authoritarianism_dict, emotionality_dict, weights):
 
         self.ingroup_dict = set(ingroup_dict)
