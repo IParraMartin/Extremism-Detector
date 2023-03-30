@@ -7,6 +7,7 @@ class ExtremismDetector:
     except:
         print("Numpy not installed, try 'pip install numpy'")
 
+
     def __init__(self, ingroup_dict, violence_dict, authoritarianism_dict, emotionality_dict, weights):
 
         self.ingroup_dict = set(ingroup_dict)
@@ -28,10 +29,13 @@ class ExtremismDetector:
         for word in words:
             if word in self.ingroup_dict:
                 ingroup_count += 1
+
             if word in self.violence_dict:
                 violence_count += 1
+
             if word in self.authoritarianism_dict:
                 authoritarianism_count += 1
+
             if word in self.emotionality_dict:
                 emotionality_count += 1
 
@@ -40,10 +44,12 @@ class ExtremismDetector:
 
 
     def _apply_logistic_function(self, score):
+
         return 1 / (1 + np.exp(-score))
 
 
     def detect_extremism(self, input_data):
+
         features = self._calculate_features(input_data)
         weighted_features = np.dot(features, self.weights)
         extremism_score = self._apply_logistic_function(weighted_features)
@@ -60,6 +66,5 @@ weights = [1.0, 1.5, 1.2, 1.3]
 detector = ExtremismDetector(ingroup_dict, violence_dict, authoritarianism_dict, emotionality_dict, weights)
 
 input_data = "We must attack the enemy and show them the power of our leader. Our anger will fuel us in this war."
-
 extremism_score = detector.detect_extremism(input_data)
 print("Extremism score:", extremism_score)
