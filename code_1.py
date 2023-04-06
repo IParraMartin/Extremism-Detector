@@ -9,7 +9,7 @@ class ExtremismDetector:
     
     negations = ["don't", "didn't", "doesn't", "isn't", "wasn't", "weren't", "aren't", "couldn't", 
                  "wouldn't", "shouldn't", "won't", "can't", "mightn't", "mustn't", "needn't", "never", 
-                 "no", "none"]
+                 "no", "none", "not"]
 
     weights = [1.0, 1.5, 1.2, 1.0]
 
@@ -46,7 +46,7 @@ class ExtremismDetector:
                 emotionality_count += 1
 
             if word in self.negations:
-
+                
                 counterbalance += 1
 
         feature_vector = np.array([ingroup_count, violence_count, authoritarianism_count, emotionality_count])
@@ -69,7 +69,7 @@ class ExtremismDetector:
         return extremism_score
 
 detector = ExtremismDetector()
-input_data = "We should go and riot!"
+input_data = 'We are going to attack the enemy. We are going to kill them. We are going to dominate them.'
 extremism_score = detector.detect_extremism(input_data)
 
 print("Extremism score:", extremism_score)
