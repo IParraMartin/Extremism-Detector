@@ -13,9 +13,11 @@ class ExtremismDetector:
 
     weights = [1.0, 1.5, 1.2, 1.0]
 
+
     def __init__(self):
 
         pass
+
 
     def _calculate_features(self, input_data):
 
@@ -67,9 +69,3 @@ class ExtremismDetector:
         extremism_score = self._apply_logistic_function(adjusted_weighted_features)
 
         return extremism_score
-
-detector = ExtremismDetector()
-input_data = 'We are going to attack the enemy. We are going to kill them. We are going to dominate them.'
-extremism_score = detector.detect_extremism(input_data)
-
-print("Extremism score:", extremism_score)
