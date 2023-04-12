@@ -1,4 +1,4 @@
-from MAIN import ExtremismDetector
+from code import ExtremismDetector
 
 detector = ExtremismDetector()
 
