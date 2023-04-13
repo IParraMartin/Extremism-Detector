@@ -3,8 +3,7 @@ class ExtremismDetector:
     ingroup_dict = ['us', 'we', 'our', 'ours', 'ourselves', 'ourself', 'ourselves']
     violence_dict = ['attack', 'war', 'violent', 'violence', 'kill', 'killing', 'killed']
     authoritarianism_dict = ['leader', 'authority', 'control', 'power', 'rule', 'dominate', 'domination', 'dominant', 'dominates', 'dominating']
-    emotionality_dict = ['hate', 'fear', 'anger', 'angry', 'fearful', 'fearfully', 'fearfulness']
-    
+    emotionality_dict = ['hate', 'fear', 'anger', 'angry', 'fearful', 'fearfully', 'fearfulness', 'rigged']
     negations = ["don't", "didn't", "doesn't", "isn't", "wasn't", "weren't", "aren't", "couldn't", 
                  "wouldn't", "shouldn't", "won't", "can't", "mightn't", "mustn't", "needn't", "never", 
                  "no", "none", "not"]
